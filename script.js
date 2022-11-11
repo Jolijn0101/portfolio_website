@@ -64,6 +64,7 @@ const sections = [
   document.querySelector('#homepage'),
   document.querySelector('#over_mij'),
   document.querySelector('#mijn_ervaring'),
+  document.querySelector('#projecten'),
   document.querySelector('#contact'),
 ];
 
@@ -73,7 +74,7 @@ let thresholdNum;
 if (screenSize >= 2000) {
   thresholdNum = 0.8;
 } else if (screenSize >= 960) {
-  thresholdNum = 0.5;
+  thresholdNum = 0.3;
 } else {
   thresholdNum = 0.05;
 }
@@ -82,13 +83,15 @@ const sectionObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        document.querySelector(`#${entry.target.id}_wrapper`).style.transform = 'translate(0)';
-        document.querySelector(`#${entry.target.id}_wrapper`).style.opacity = '1';
         document.querySelector(`#${entry.target.id}_link`).style.color = 'rgb(255, 193, 0)';
         document.querySelector(`#${entry.target.id}_link_mobile`).style.color = 'rgb(255, 193, 0)';
       } else {
         document.querySelector(`#${entry.target.id}_link`).style.color = 'rgb(255, 255, 255)';
         document.querySelector(`#${entry.target.id}_link_mobile`).style.color = 'rgb(255, 255, 255)';
+      }
+      if (entry.isIntersecting && entry.target.id !== 'projecten') {
+        document.querySelector(`#${entry.target.id}_wrapper`).style.transform = 'translate(0)';
+        document.querySelector(`#${entry.target.id}_wrapper`).style.opacity = '1';
       }
     });
   },
@@ -112,17 +115,10 @@ const projects = [
 const projectObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      console.log(entry.target.id);
       if (entry.isIntersecting) {
         document.querySelector(`#${entry.target.id}_wrapper`).style.transform = 'translate(0)';
         document.querySelector(`#${entry.target.id}_wrapper`).style.opacity = '1';
-
-        /*document.querySelector(`#${entry.target.id}_link`).style.color = 'rgb(255, 193, 0)';
-        document.querySelector(`#${entry.target.id}_link_mobile`).style.color = 'rgb(255, 193, 0)';*/
-      } /*else {
-        /*document.querySelector(`#${entry.target.id}_link`).style.color = 'rgb(255, 255, 255)';
-        document.querySelector(`#${entry.target.id}_link_mobile`).style.color = 'rgb(255, 255, 255)';
-      }*/
+      }
     });
   },
   {

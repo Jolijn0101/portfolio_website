@@ -179,7 +179,7 @@ header .button {
 }
 
 header li a:hover {
-  color: var(--fifth-color);
+  color: var(--fifth-color) !important;
 }
 
 header h1 {
