@@ -32,11 +32,6 @@
   --platte-text-medium: 300;
   --platte-text-semibold: 400;
   --platte-text-bold: 500;
-
-  /*========== z index ==========*/
-  --z-tooltip: 10;
-  --z-fixed: 100;
-  --z-modal: 1000;
 }
 
 /*=============== BASE ===============*/
@@ -257,7 +252,7 @@ header h1 {
 #homepage h1 {
   background-color: var(--fifth-color);
   color: var(--first-color);
-  font-size: max(1.5rem, 7vw);
+  font-size: max(1.5rem, 5vw);
   padding: 1rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -662,8 +657,9 @@ header h1 {
 #wanderlust,
 #jammming {
   margin: auto;
-  margin-bottom: 7rem;
+  margin-bottom: 4rem;
   overflow-x: hidden;
+  padding-bottom: 4rem;
 }
 
 #calculator_wrapper,
@@ -943,6 +939,12 @@ video {
 #contact_form input[type='submit'] {
   margin-top: 1.5rem;
   font-size: var(--normal-font-size);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  -webkit-transition: background-color 600000s 0s, color 600000s 0s;
+  transition: background-color 600000s 0s, color 600000s 0s;
 }
 
 @media screen and (max-width: 960px) {
