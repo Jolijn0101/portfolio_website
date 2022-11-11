@@ -937,7 +937,7 @@ video {
   border: 2px solid var(--fifth-color);
 }
 
-#contact_form input[type='submit'] {
+#contact_form button {
   margin-top: 1.5rem;
   font-size: var(--normal-font-size);
 }
