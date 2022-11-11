@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jolijn Rosendaal</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" as="font" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- mobile menu -->
+    <nav id="mobile_menu">
+      <i class="bx bx-x" onclick="closeMobileMenu()"></i>
+      <ul>
+        <li onclick="closeMobileMenu()"><a href="#homepage" id="homepage_link_mobile">homepage</a></li>
+        <li onclick="closeMobileMenu()"><a href="#over_mij" id="over_mij_link_mobile">over mij</a></li>
+        <li onclick="closeMobileMenu()"><a href="#mijn_ervaring" id="mijn_ervaring_link_mobile">mijn ervaring</a></li>
+        <li onclick="closeMobileMenu()"><a href="#projecten">projecten</a></li>
+        <li onclick="closeMobileMenu()"><a href="#contact" id="contact_link_mobile">contact</a></li>
+        <li>
+          <a class="button">download CV</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- header -->
+    <header>
+      <h1><a href="#homepage">{J.R.}</a></h1>
+      <nav>
+        <ul id="navigation">
+          <li><a href="#homepage" id="homepage_link">homepage</a></li>
+          <li><a href="#over_mij" id="over_mij_link">over mij</a></li>
+          <li><a href="#mijn_ervaring" id="mijn_ervaring_link">mijn ervaring</a></li>
+          <li><a href="#projecten">projecten</a></li>
+          <li><a href="#contact" id="contact_link">contact</a></li>
+          <li>
+            <a class="button">download CV</a>
+          </li>
+        </ul>
+        <i class="bx bx-menu" onclick="openMobileMenu()"></i>
+      </nav>
+    </header>
+    <!-- homepage -->
+    <section id="homepage">
+      <div id="homepage_wrapper">
+        <h3>Hi, mijn naam is</h3>
+        <h1>Jolijn Rosendaal</h1>
+        <h2>Website's en webapps creëren is mijn passie</h2>
+        <a href="#over_mij"><img src="./afbeeldingen/scroll_icon.png" id="scroll_icon" alt="scroll_icon" /></a>
+      </div>
+    </section>
+    <!-- over mij -->
+    <section id="over_mij">
+      <div id="over_mij_wrapper">
+        <h1>Over mij</h1>
+        <div class="over_mij_container">
+          <ul id="menu">
+            <li class="intro_tab menu_title_active1" onclick="menuTabs1('infoTab')">intro</li>
+            <li class="opleidingenHobbies_tab" onclick="menuTabs1('opleidingenHobbiesTab')">opleidingen <br />& hobbies</li>
+          </ul>
+          <ul id="mobile_menu_over_mij">
+            <li class="intro_tab menu_title_active1" onclick="menuTabs1('infoTab')">intro</li>
+            <li class="opleidingenHobbies_tab" onclick="menuTabs1('opleidingenHobbiesTab')">opleidingen & hobbies</li>
+          </ul>
+          <div id="intro_content">
+            <p>
+              Voordat ik begon met code schrijven heb ik de opleiding grafisch vormgeven aan het grafisch lyceum in Rotterdam gedaan. Tijdens de opleiding heb
+              ik een keer een website mogen maken met Wordpress. Al snel belandde ik in het schrijven van code en hoe meer ik er in verdiepte hoe nieuwsgieriger
+              ik er naar werd.
+            </p>
+            <p>
+              Nog niet zo kort gelden heb ik de opleiding front-end engineer bij code cademy afgerond. Ik leerde o.a. de talen html, css en javascript aan de
+              hand van het maken van projecten. Nu kan ik niet wachten om een plek in de arbeidsmarkt te vinden waar ik aan slag kan met alles wat ik geleerd
+              heb.
+            </p>
+          </div>
+          <div id="opleidingen_hobbies_content">
+            <div class="opleidingen">
+              <h3>Opleidingen</h3>
+              <ul>
+                <li>
+                  <i class="icon bx bx-award"></i>
+                  <p>
+                    Grafisch vormgeven <br />
+                    aan het grafisch Lyceum
+                  </p>
+                </li>
+                <li>
+                  <i class="icon bx bx-award"></i>
+                  <p>
+                    Front-end engineer <br />
+                    bij Code Cademy
+                  </p>
+                </li>
+                <li>
+                  <i class="icon bx bx-award"></i>
+                  <p>
+                    Learn Intermediate Css <br />
+                    bij Code Cademy
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="hobbies">
+              <h3>Hobbies</h3>
+              <ul>
+                <li>
+                  <p>Fotografie</p>
+                  <a href="https://www.pexels.com/nl-nl/@jolijn-rosendaal-113470379/"
+                    ><p>naar pexels page</p>
+                    <i class="icon bx bx-right-arrow-alt"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- mijn ervaring -->
+    <section id="mijn_ervaring">
+      <div id="mijn_ervaring_wrapper">
+        <div>
+          <div id="mijn_ervaring_intro">
+            <h1>Mijn ervaring</h1>
+            <p>
+              Tijdens mijn opleidingen heb ik met verschillende soorten programmas mogen werken en leerde ik verschillende code talen schrijven. Hieronder staat
+              een overzicht van de meest gebruikte programmas en code talen. Tijdens mijn opleidingen en in mijn vrijetijd werk ik met mac.
+            </p>
+          </div>
+          <div id="competenties_container">
+            <div id="competenties_menu">
+              <ul>
+                <li id="grafisch" onclick="menuTabs2('grafisch_list')" class="menu_title_active2">grafisch</li>
+                <li id="front-end" onclick="menuTabs2('front-end_list')">front-end development</li>
+                <li id="code-talen" onclick="menuTabs2('code_talen_list')">code talen</li>
+              </ul>
+            </div>
+            <h3>grafisch</h3>
+            <ul id="grafisch_list">
+              <li><img src="./afbeeldingen/photoshop.png" alt="" />Adobe photoshop</li>
+              <li><img src="./afbeeldingen/indesign.png" alt="" />Adobe Indesign</li>
+              <li><img src="./afbeeldingen/illustrator.png" alt="" />Adobe Illustrator</li>
+              <li><img src="./afbeeldingen/inkscape.png" alt="" />Inkscape</li>
+              <li><img src="./afbeeldingen/GIMP.png" alt="" />GIMP</li>
+              <li><img src="./afbeeldingen/pages.png" alt="" />Pages</li>
+            </ul>
+            <h3>front-end development</h3>
+            <ul id="front-end_list">
+              <li><img src="./afbeeldingen/visual_studio_code.png" alt="" />Visual Studio Code</li>
+              <li><img src="./afbeeldingen/crome_dev_tools.png" alt="" />Chrome dev tools</li>
+              <li><img src="./afbeeldingen/git.png" alt="" />Git</li>
+              <li><img src="./afbeeldingen/github.png" alt="" />Github</li>
+              <li><img src="./afbeeldingen/wordpress.png" alt="" />Wordpress</li>
+            </ul>
+            <h3>code talen</h3>
+            <ul id="code_talen_list">
+              <li><img src="./afbeeldingen/html.png" alt="" />HTML</li>
+              <li><img src="./afbeeldingen/Css.png" alt="" />Css</li>
+              <li><img src="./afbeeldingen/js.png" alt="" />javascript</li>
+              <li><img src="./afbeeldingen/react.png" alt="" />React</li>
+              <li><img src="./afbeeldingen/redux.png" alt="" />Redux</li>
+              <li><img src="./afbeeldingen/node.png" alt="" />Node</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- projecten -->
+    <section id="projecten">
+      <div>
+        <div id="projecten_intro">
+          <div id="projecten_intro_wrapper">
+            <h1>Projecten</h1>
+            <p>
+              Tijdens mijn opleiding heb ik verschillende projecten gemaakt. Daarvan heb ik er vier uitgekozen. Twee er van zijn ook online te bekijken en uit
+              te proberen.
+            </p>
+          </div>
+        </div>
+        <div id="calculator" class="project">
+          <div id="calculator_wrapper">
+            <video src="./video/calculator fimpje.mov" width="520" height="340" controls></video>
+            <div class="project_text">
+              <div class="title-box">
+                <h2>calculator</h2>
+              </div>
+              <p>
+                Een minimalistische calculator waarmee je ook komma getallen en negative getallen kunt uitrekenen. De vormgeving van de calculator heb ik zelf
+                bedacht. Ook de javascript die achter de functionaliteit zit heb ik zelf geschreven.
+              </p>
+              <div class="icon-info">
+                <div class="code-talen">
+                  <h3>HTML <span>-</span> Css <span>-</span> Javascript</h3>
+                </div>
+                <div class="icon-links">
+                  <a href="https://jolijn0101.github.io/calculator/" class="github-page_link">
+                    <i class="bx bxl-github"></i>
+                    <div class="tooltip">Liveview</div>
+                  </a>
+                  <a href="https://github.com/Jolijn0101/calculator" class="github_link"
+                    ><i class="bx bx-code-alt"></i>
+                    <div class="tooltip">view code</div></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="password_generator" class="project">
+          <div id="password_generator_wrapper">
+            <video src="./video/Schermopname 2022-05-30 om 13.59.32.mov" width="520" height="340" controls></video>
+            <div class="project_text">
+              <div class="title-box password_generator-title">
+                <h2>password generator</h2>
+              </div>
+              <p>
+                Een praktische webapp voor het maken van verschillende soorten paswoorden zodat je zelf niet lang hoeft na te denken wanneer je een nieuw
+                wachtwoord nodig hebt. Je kunt verschillende lengtes instellen kiezen of er letters cijfers en speciale tekens gebruikt mogen worden en je kunt
+                de webapp meerdere keren achter elkaar gebruiken.
+              </p>
+              <div class="icon-info">
+                <div class="code-talen">
+                  <h3>HTML <span>-</span> Css <span>-</span> Javascript</h3>
+                </div>
+                <div class="icon-links">
+                  <a href="https://jolijn0101.github.io/calculator/" class="github-page_link">
+                    <i class="bx bxl-github"></i>
+                    <div class="tooltip">Liveview</div>
+                  </a>
+                  <a href="https://github.com/Jolijn0101/calculator" class="github_link"
+                    ><i class="bx bx-code-alt"></i>
+                    <div class="tooltip">view code</div></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="wanderlust" class="project">
+          <div id="wanderlust_wrapper">
+            <video src="./video/wanderlustMovie.mov" width="520" height="340" controls></video>
+            <div class="project_text">
+              <div class="title-box">
+                <h2>wanderlust</h2>
+              </div>
+              <p>
+                Deze webapp is perfect voor reislustige mensen. Wanneer je op de plaats van bestemming bent vul je de naam van de stad of dorp in waar je bent
+                en de webapp laat zien wat er allemaal te doen is in de omgeving. Ook staat het adres erbij vermeld zodat je er meteen naartoe kunt.
+              </p>
+              <div class="icon-info">
+                <div class="code-talen">
+                  <h3>HTML <span>-</span> Css <span>-</span> Javascript</h3>
+                </div>
+                <div class="icon-links">
+                  <a href="https://github.com/Jolijn0101/wanderlust" class="github_link"
+                    ><i class="bx bx-code-alt"></i>
+                    <div class="tooltip">view code</div></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="jammming" class="project">
+          <div id="jammming_wrapper">
+            <video src="./video/Jammming-Movie-compressed.mov" width="520" height="340" controls></video>
+            <div class="project_text">
+              <div class="title-box">
+                <h2>Jammming</h2>
+              </div>
+              <p>
+                Een verenvoudigde en stijlvolle manier om overzichtelijk nieuwe playlisten voor Spotify te kunnen maken. Dit was een opdracht voor Codecademy
+                waar ik ontzettend veel van geleerd heb en o.a. heb leren werken met React.
+              </p>
+              <div class="icon-info">
+                <div class="code-talen">
+                  <h3>HTML <span>-</span> Css <span>-</span> Javascript <span>-</span> React</h3>
+                </div>
+                <div class="icon-links">
+                  <a href="https://github.com/Jolijn0101/wanderlust" class="github_link"
+                    ><i class="bx bx-code-alt"></i>
+                    <div class="tooltip">view code</div></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- contact -->
+    <section id="contact">
+      <div id="contact_wrapper">
+        <div id="contact_intro">
+          <h1>Contact</h1>
+          <p>Heeft mijn portfolio website je interesse gewekt? Aarzel niet en neem gelijk contact op.</p>
+        </div>
+        <div id="contact_container">
+          <div id="contact_info">
+            <div class="contact_info_box">
+              <i class="bx bxs-envelope"></i>
+              <p>stuur een mail in eigen e-mailprogramma</p>
+              <a href="mailto:jolijnrosendaal@gmail.com">stuur mail <i class="icon bx bx-right-arrow-alt"></i></a>
+            </div>
+            <div class="contact_info_box">
+              <i class="bx bxl-messenger"></i>
+              <p>stuur een bericht in facebook messenger</p>
+              <a href="http://m.me/jolijn.rosendaal">stuur bericht <i class="icon bx bx-right-arrow-alt"></i></a>
+            </div>
+          </div>
+
+          <div id="contact_form">
+            <form action="">
+              <label for="name">name:</label><br />
+              <input type="text" id="name" name="name" required minlength="3" maxlength="40" /><br />
+              <label for="email">e-mail:</label><br />
+              <input type="email" id="email" name="email" required /><br />
+              <label for="bericht">bericht:</label><br />
+              <textarea name="bericht" id="bericht" cols="30" rows="10" required></textarea><br />
+              <input class="button" type="submit" value="Verzend" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer>Created by Jolijn Rosendaal©</footer>
+  </body>
+</html>
