@@ -937,6 +937,10 @@ video {
   border: 2px solid var(--fifth-color);
 }
 
+#contact_form textarea {
+  line-height: 2rem;
+}
+
 #contact_form button {
   margin-top: 1.5rem;
   font-size: var(--normal-font-size);
@@ -946,6 +950,10 @@ input:-webkit-autofill,
 input:-webkit-autofill:focus {
   -webkit-transition: background-color 600000s 0s, color 600000s 0s;
   transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input::-webkit-contacts-auto-fill-button {
+  background-color: var(--fourth-color) !important;
 }
 
 @media screen and (max-width: 960px) {
