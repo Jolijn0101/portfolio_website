@@ -12,26 +12,17 @@
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
-  --biggest-font-size: 1.75rem;
   --h1-font-size: 1.8rem;
   --h2-font-size: 1.2rem;
   --h3-font-size: 1rem;
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
-  --smaller-font-size: 0.75rem;
-  --tiny-font-size: 0.625rem;
 
   /*========== Font weight ==========*/
 
-  --title-light: 100;
-  --title-medium: 200;
-  --title-semibold: 300;
-  --title-bold: 400;
-
-  --platte-text-light: 100;
-  --platte-text-medium: 300;
-  --platte-text-semibold: 400;
-  --platte-text-bold: 500;
+  --light: 100;
+  --medium: 200;
+  --bold: 400;
 }
 
 /*=============== BASE ===============*/
@@ -66,12 +57,12 @@ body {
 h1,
 h2,
 h3 {
-  font-weight: var(--title-bold);
+  font-weight: var(--bold);
 }
 
 p {
   font-size: var(--small-font-size);
-  font-weight: var(--title-light);
+  font-weight: var(--light);
   line-height: 1.8rem;
 }
 
@@ -84,10 +75,11 @@ ul {
   list-style: none;
 }
 
+/*=============== REUSABLE CSS CLASSES ===============*/
 .button {
   cursor: pointer;
   font-family: 'Trispace', sans-serif;
-  font-weight: var(--title-bold);
+  font-weight: var(--bold);
   font-size: 1rem;
   border: 2px solid var(--fifth-color);
   color: var(--fifth-color);
@@ -101,8 +93,6 @@ ul {
   color: var(--first-color);
   transition: 1s;
 }
-
-/*=============== REUSABLE CSS CLASSES ===============*/
 
 /*=============== BODY ===============*/
 section:first-of-type {
@@ -162,7 +152,7 @@ header ul {
 
 header li a {
   display: inline;
-  font-weight: var(--title-bold);
+  font-weight: var(--bold);
   margin-right: 1.5rem;
   font-size: 1rem;
 }
@@ -268,12 +258,12 @@ header h1 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  font-weight: var(--title-bold);
+  font-weight: var(--bold);
   margin-bottom: 2vw;
 }
 
 #homepage h2 {
-  font-weight: var(--title-light);
+  font-weight: var(--light);
   font-size: max(0.8rem, 1.5vw);
   width: 80%;
   line-height: max(1.2rem);
@@ -335,7 +325,7 @@ header h1 {
 }
 
 .over_mij_container #menu {
-  font-weight: var(--title-bold);
+  font-weight: var(--bold);
   border-left: 2px solid var(--second-color);
   font-size: var(--normal-font-size);
   flex: 3;
@@ -408,7 +398,7 @@ header h1 {
 #opleidingen_hobbies_content p {
   font-family: 'Trispace', sans-serif;
   font-size: var(--small-font-size);
-  font-weight: var(--title-light);
+  font-weight: var(--light);
 }
 
 .opleidingen .icon {
@@ -589,7 +579,7 @@ header h1 {
   display: flex;
   align-items: center;
   font-size: var(--small-font-size);
-  font-weight: var(--title-light);
+  font-weight: var(--light);
   width: 14rem;
   margin: 1rem;
 }
@@ -934,7 +924,7 @@ video {
   color: var(--fourth-color);
   font-size: var(--small-font-size);
   font-family: 'Trispace', sans-serif;
-  font-weight: var(--title-medium);
+  font-weight: var(--medium);
 }
 
 #contact_form input[type='text']:focus,
@@ -963,8 +953,7 @@ input:-webkit-autofill:focus {
 }
 
 input::-webkit-contacts-auto-fill-button {
-  -webkit-transition: background-color 600000s 0s, color 600000s 0s;
-  transition: background-color 600000s 0s, color 600000s 0s;
+  background-color: var(--first-color);
 }
 
 @media screen and (max-width: 960px) {
