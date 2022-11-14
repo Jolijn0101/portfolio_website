@@ -110,6 +110,7 @@ section:first-of-type {
 }
 
 /*=============== HEADER & NAV ===============*/
+
 #mobile_menu {
   display: none;
   position: fixed;
@@ -174,7 +175,16 @@ header .button {
   font-size: 1rem;
 }
 
-header li a:hover {
+#homepage_link_mobile:hover,
+#over_mij_link_mobile:hover,
+#mijn_ervaring_link_mobile:hover,
+#projecten_link_mobile:hover,
+#contact_link_mobile:hover,
+#homepage_link:hover,
+#over_mij_link:hover,
+#mijn_ervaring_link:hover,
+#projecten_link:hover,
+#contact_link:hover {
   color: var(--fifth-color) !important;
 }
 
