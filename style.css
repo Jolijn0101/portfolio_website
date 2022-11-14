@@ -963,7 +963,8 @@ input:-webkit-autofill:focus {
 }
 
 input::-webkit-contacts-auto-fill-button {
-  display: none !important;
+  -webkit-transition: background-color 600000s 0s, color 600000s 0s;
+  transition: background-color 600000s 0s, color 600000s 0s;
 }
 
 @media screen and (max-width: 960px) {
