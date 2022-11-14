@@ -953,7 +953,7 @@ input:-webkit-autofill:focus {
 }
 
 input::-webkit-contacts-auto-fill-button {
-  background-color: var(--fourth-color) !important;
+  display: none !important;
 }
 
 @media screen and (max-width: 960px) {
