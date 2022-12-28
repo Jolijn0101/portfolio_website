@@ -89,7 +89,7 @@ const sectionObserver = new IntersectionObserver(
         document.querySelector(`#${entry.target.id}_link`).style.color = 'rgb(255, 255, 255)';
         document.querySelector(`#${entry.target.id}_link_mobile`).style.color = 'rgb(255, 255, 255)';
       }
-      if (entry.isIntersecting && entry.target.id !== 'projecten') {
+      if ((entry.isIntersecting && entry.target.id !== 'projecten') || (entry.isIntersecting && entry.target.id !== 'homepage')) {
         document.querySelector(`#${entry.target.id}_wrapper`).style.transform = 'translate(0)';
         document.querySelector(`#${entry.target.id}_wrapper`).style.opacity = '1';
       }
@@ -128,4 +128,71 @@ const projectObserver = new IntersectionObserver(
 
 projects.forEach((project) => {
   projectObserver.observe(project);
+});
+
+const homepageElements = [document.querySelector('#homepage')];
+let toggleH1Animatie;
+
+const homepageObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // h3 animatie
+        document.querySelector(`#${entry.target.id} h3`).style.transform = 'translate(0)';
+        document.querySelector(`#${entry.target.id} h3`).style.opacity = '1';
+
+        // h1 animatie
+        setTimeout(h1Animatie, 2000);
+        function h1Animatie() {
+          if (toggleH1Animatie !== true) {
+            toggleH1Animatie = true;
+            const text = document.querySelector(`#${entry.target.id} h1`);
+            const strText = text.textContent;
+            const splitText = strText.split('');
+            text.textContent = '';
+            document.querySelector(`#blokje`).style.display = 'inline';
+            document.querySelector(`#${entry.target.id} h1`).style.display = 'inline';
+
+            for (let i = 0; i < splitText.length; i++) {
+              text.innerHTML += '<span>' + splitText[i] + '</span>';
+            }
+
+            let char = 0;
+            let timer = setInterval(onTick, 200);
+
+            function onTick() {
+              const span = text.querySelectorAll('span')[char];
+              span.style.display = 'inline';
+              span.style.opacity = '1';
+              char++;
+              if (char === splitText.length) {
+                console.log('complete');
+                complete();
+                return;
+              }
+            }
+
+            function complete() {
+              clearInterval(timer);
+              timer = null;
+            }
+          }
+        }
+
+        // h2 animatie
+        setTimeout(h2Animatie, 5000);
+        function h2Animatie() {
+          document.querySelector(`#${entry.target.id} h2`).style.transform = 'translate(0)';
+          document.querySelector(`#${entry.target.id} h2`).style.opacity = '1';
+        }
+      }
+    });
+  },
+  {
+    threshold: thresholdNum,
+  }
+);
+
+homepageElements.forEach((homepageElement) => {
+  homepageObserver.observe(homepageElement);
 });

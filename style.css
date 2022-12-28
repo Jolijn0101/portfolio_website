@@ -137,6 +137,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0px 50px;
 }
 
 header nav {
@@ -163,6 +164,7 @@ header li a {
 
 header .button {
   font-size: 1rem;
+  margin-right: 0px;
 }
 
 #homepage_link_mobile:hover,
@@ -179,16 +181,13 @@ header .button {
 }
 
 header h1 {
-  margin: 0px 50px;
+  margin: 0px;
   font-size: 1.6rem;
 }
 
 @media screen and (max-width: 410px) {
-  header nav {
-    margin-right: 15px;
-  }
-  header h1 {
-    margin: 0px 25px;
+  header {
+    padding: 0px 25px;
   }
 }
 
@@ -199,10 +198,6 @@ header h1 {
   .bx-menu::before {
     display: block;
     font-size: 3rem;
-  }
-
-  header nav {
-    margin-right: 20px;
   }
 }
 
@@ -238,28 +233,45 @@ header h1 {
   padding-left: 150px;
 }
 
-#homepage_wrapper {
-  transform: translateY(-100vh);
-  opacity: 0;
-  transition: 2s;
-}
-
 #homepage h3 {
   font-weight: var(--font-medium);
   font-size: max(1rem, 3vw);
   margin-bottom: 2vw;
+  opacity: 0;
+  transform: translateY(-200px);
+  transition: 2s;
+}
+
+#naam {
+  display: flex;
+  margin-bottom: 3vw;
+  height: max(1.7rem, 5.65vw);
+  min-width: 2rem;
+}
+
+#blokje {
+  background-color: var(--fifth-color);
+  height: max(1.7rem, 5.65vw);
+  width: max(0.8rem, 3vw);
+  transition: 0.2s;
+  display: none;
 }
 
 #homepage h1 {
-  background-color: var(--fifth-color);
+  display: none;
   color: var(--first-color);
   font-size: max(1.5rem, 5vw);
-  padding: 1rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   font-weight: var(--bold);
-  margin-bottom: 2vw;
+}
+
+#homepage h1 span {
+  display: none;
+  opacity: 0;
+  transition: 0.2s;
+  background-color: var(--fifth-color);
 }
 
 #homepage h2 {
@@ -267,6 +279,9 @@ header h1 {
   font-size: max(0.8rem, 1.5vw);
   width: 80%;
   line-height: max(1.2rem);
+  opacity: 0;
+  transform: translateY(200px);
+  transition: 2s;
 }
 
 #scroll_icon {
@@ -432,9 +447,10 @@ header h1 {
 }
 
 .hobbies a:hover .icon {
-  margin-left: 1rem;
+  transform: translate(1rem, 0.4rem);
   color: var(--fifth-color);
 }
+
 @media screen and (max-width: 422px) {
   .opleidingenHobbies_tab {
     width: 120px;
