@@ -1,0 +1,1045 @@
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --first-color: rgb(17, 22, 46);
+  --second-color: rgb(153, 153, 176);
+  --third-color: rgb(181, 190, 219);
+  --fourth-color: rgb(255, 255, 255);
+  --fifth-color: rgb(255, 193, 0);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --h1-font-size: 1.8rem;
+  --h2-font-size: 1.2rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+
+  /*========== Font weight ==========*/
+
+  --light: 100;
+  --medium: 200;
+  --bold: 400;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--first-color);
+  color: white;
+  font-family: 'Trispace', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  z-index: 1;
+}
+
+#over_mij,
+#mijn_ervaring,
+#projecten {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: var(--bold);
+}
+
+p {
+  font-size: var(--small-font-size);
+  font-weight: var(--light);
+  line-height: 1.8rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--fourth-color);
+}
+
+ul {
+  list-style: none;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.button {
+  cursor: pointer;
+  font-family: 'Trispace', sans-serif;
+  font-weight: var(--bold);
+  font-size: 1rem;
+  border: 2px solid var(--fifth-color);
+  color: var(--fifth-color);
+  border-radius: 5px;
+  padding: 0.8em 1.5em;
+  background-color: var(--first-color);
+}
+
+.button:hover {
+  background-color: var(--fifth-color);
+  color: var(--first-color);
+  transition: 1s;
+}
+
+/*=============== BODY ===============*/
+section:first-of-type {
+  padding-top: 100px;
+}
+
+/*=============== HEADER & NAV ===============*/
+
+#mobile_menu {
+  display: none;
+  position: fixed;
+  z-index: 150;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(17, 22, 46);
+}
+
+#mobile_menu ul {
+  line-height: 5rem;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 128px);
+}
+
+#mobile_menu .bx-x {
+  color: var(--fourth-color);
+  font-size: 3rem;
+  padding: 0.5rem;
+  margin-left: calc(100% - 64px);
+}
+
+header {
+  position: fixed;
+  background-color: var(--first-color);
+  width: 100%;
+  height: 100px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header li a {
+  display: inline;
+  font-weight: var(--bold);
+  margin-right: 1.5rem;
+  font-size: 1rem;
+}
+
+.bx-menu::before {
+  display: none;
+}
+
+header .button {
+  font-size: 1rem;
+  margin-right: 0px;
+}
+
+#homepage_link_mobile:hover,
+#over_mij_link_mobile:hover,
+#mijn_ervaring_link_mobile:hover,
+#projecten_link_mobile:hover,
+#contact_link_mobile:hover,
+#homepage_link:hover,
+#over_mij_link:hover,
+#mijn_ervaring_link:hover,
+#projecten_link:hover,
+#contact_link:hover {
+  color: var(--fifth-color) !important;
+}
+
+header h1 {
+  margin: 0px;
+  font-size: 1.6rem;
+}
+
+@media screen and (max-width: 410px) {
+  header {
+    padding: 0px 25px;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  #navigation {
+    display: none;
+  }
+  .bx-menu::before {
+    display: block;
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 1045px) {
+  header li a {
+    font-size: 0.8rem;
+  }
+  header .button {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  header,
+  section {
+    width: 80%;
+    margin: auto;
+  }
+  header {
+    margin: 0rem 10%;
+  }
+}
+
+/*=============== Homepage ===============*/
+
+#homepage {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  padding-left: 150px;
+}
+
+#homepage h3 {
+  font-weight: var(--font-medium);
+  font-size: max(1rem, 3vw);
+  margin-bottom: 2vw;
+  opacity: 0;
+  transform: translateY(-200px);
+  transition: 2s;
+}
+
+#naam {
+  display: flex;
+  margin-bottom: 3vw;
+  height: max(1.7rem, 5.65vw);
+  min-width: 2rem;
+}
+
+#blokje {
+  background-color: var(--fifth-color);
+  height: max(1.7rem, 5.65vw);
+  width: max(0.8rem, 3vw);
+  transition: 0.2s;
+  display: none;
+}
+
+#homepage h1 {
+  display: none;
+  color: var(--first-color);
+  font-size: max(1.5rem, 5vw);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: var(--bold);
+}
+
+#homepage h1 span {
+  display: none;
+  opacity: 0;
+  transition: 0.2s;
+  background-color: var(--fifth-color);
+}
+
+#homepage h2 {
+  font-weight: var(--light);
+  font-size: max(0.8rem, 1.5vw);
+  width: 80%;
+  line-height: max(1.2rem);
+  opacity: 0;
+  transform: translateY(200px);
+}
+
+#scroll_icon {
+  width: 1.8rem;
+  margin: 5rem 0rem 0rem calc(100% - 7%);
+}
+
+@media screen and (max-width: 900px) {
+  #homepage {
+    padding-left: 50px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #scroll_icon {
+    margin-left: calc(100% - 15%);
+  }
+}
+@media screen and (max-width: 410px) {
+  #homepage {
+    padding-left: 25px;
+  }
+  #homepage h2 {
+    padding-bottom: 20px;
+  }
+}
+@media screen and (min-width: 2000px) {
+  #homepage {
+    padding-left: calc(10% + 50px);
+  }
+}
+
+/*=============== Over mij ===============*/
+#over_mij {
+  padding: 7rem 0rem;
+}
+
+#over_mij_wrapper {
+  transform: translateX(-100vh);
+  opacity: 0;
+  transition: 2s;
+  width: 900px;
+}
+
+#over_mij h1 {
+  margin-bottom: 2rem;
+  font-size: var(--h1-font-size);
+  margin-left: 1.2rem;
+}
+
+.over_mij_container {
+  display: flex;
+  height: 400px;
+}
+
+/*** tab menu ***/
+.over_mij_container #menu {
+  font-weight: var(--bold);
+  border-left: 2px solid var(--second-color);
+  font-size: var(--normal-font-size);
+  flex: 3;
+}
+
+.over_mij_container #menu li {
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  padding-left: 20px;
+  line-height: 1.7rem;
+  transform: translate(2px);
+}
+
+#mobile_menu_over_mij {
+  display: none;
+}
+
+.over_mij_container #menu .menu_title_active1 {
+  border-left: 6px solid var(--fifth-color);
+  transform: translate(-4px);
+}
+
+.over_mij_container #menu li:hover {
+  color: var(--fifth-color);
+  cursor: pointer;
+}
+
+/*** tab content ***/
+.tab_content {
+  flex: 8;
+}
+.tab_content h3 {
+  margin-bottom: 2rem;
+}
+/* default setting tab content */
+#opleidingen_tab_content,
+#hobbies_tab_content {
+  display: none;
+}
+/* opleidingen */
+#opleidingen_tab_content ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+#opleidingen_tab_content li {
+  display: flex;
+}
+#opleidingen_tab_content i {
+  font-size: 2rem;
+  flex: 1;
+}
+#opleidingen_tab_content p {
+  flex: 6;
+}
+/* hobbies */
+#hobbies_tab_content a {
+  color: var(--fifth-color);
+  display: flex;
+}
+#hobbies_tab_content i {
+  font-size: 1.5rem;
+  transform: translateY(0.2rem);
+  transition: 0.5s;
+}
+#hobbies_tab_content a:hover i {
+  transform: translate(1rem, 0.2rem);
+}
+
+/* for mobile 474 */
+@media screen and (max-width: 820px) {
+  #over_mij h1 {
+    text-align: center;
+    margin-left: 0rem;
+  }
+  #over_mij h3 {
+    text-align: center;
+  }
+  .over_mij_container {
+    flex-direction: column;
+    width: 90vw;
+    margin: auto;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  /* tab menu */
+  .over_mij_container #menu {
+    display: flex;
+    justify-content: center;
+    border-left: none;
+    border-bottom: 2px solid var(--second-color);
+    margin-bottom: 3.5rem;
+    gap: 0.5rem;
+  }
+  .over_mij_container #menu li {
+    transform: translate(0px, 4px);
+    padding: 0.5rem;
+  }
+  .over_mij_container #menu .menu_title_active1 {
+    border-left: none;
+    border-bottom: 6px solid var(--fifth-color);
+    transform: translate(0px, 4px);
+  }
+  /* tab content */
+  .tab_content {
+    width: 80vw;
+    margin: auto;
+  }
+  /* opleidingen */
+  #opleidingen_tab_content ul {
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  #over_mij h3 {
+    text-align: left;
+  }
+}
+
+/*=============== Mijn ervaring ===============*/
+#mijn_ervaring {
+  padding: 7rem 0rem;
+  overflow-x: hidden;
+}
+
+#mijn_ervaring_wrapper {
+  transform: translateX(100vh);
+  opacity: 0;
+  transition: 2s;
+}
+
+#mijn_ervaring_intro {
+  text-align: center;
+  width: 100%;
+  max-width: 100rem;
+  margin-bottom: 6rem;
+}
+
+#mijn_ervaring h1 {
+  font-size: var(--h1-font-size);
+  margin-bottom: 1.5rem;
+}
+
+#mijn_ervaring_intro p {
+  width: 58%;
+  margin: auto;
+}
+
+#mijn_ervaring h2 {
+  font-size: var(--h2-font-size);
+  padding-bottom: 1rem;
+  margin: auto;
+  border-bottom: 6px solid var(--fifth-color);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#competenties_container {
+  width: 58%;
+  margin: auto;
+}
+
+#competenties_menu ul {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid var(--second-color);
+  margin-bottom: 2.5rem;
+}
+
+#competenties_menu li {
+  padding: 1.5rem;
+  transform: translateY(4px);
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+#competenties_menu li:hover {
+  color: var(--fifth-color);
+  cursor: pointer;
+}
+
+.menu_title_active2 {
+  border-bottom: 6px solid var(--fifth-color);
+}
+
+#competenties_container h3 {
+  display: none;
+}
+
+#grafisch_list,
+#front-end_list,
+#code-talen_list {
+  line-height: 5.5rem;
+  font-size: var(--normal-font-size);
+  font-weight: var(--title-normal);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#mijn_ervaring img {
+  width: 30px;
+  margin-right: 2rem;
+}
+
+#grafisch_list li,
+#front-end_list li,
+#code-talen_list li {
+  display: flex;
+  align-items: center;
+  font-size: var(--small-font-size);
+  font-weight: var(--light);
+  width: 14rem;
+  margin: 1rem;
+}
+
+#front-end_list,
+#code-talen_list {
+  display: none;
+}
+
+@media screen and (max-width: 474px) {
+  #competenties_container h3 {
+    display: block;
+    margin: auto;
+    border-bottom: 6px solid var(--fifth-color);
+    padding: 6rem 2rem 2rem 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 2rem;
+    text-align: center;
+  }
+  #competenties_container h3:last-of-type {
+    padding: 6rem 0rem 2rem 0rem;
+  }
+
+  #mijn_ervaring_intro {
+    margin-bottom: 1rem;
+  }
+  #competenties_menu {
+    display: none;
+  }
+  #grafisch_list li,
+  #front-end_list li,
+  #code-talen_list li {
+    width: 250px;
+  }
+
+  #grafisch_list,
+  #front-end_list,
+  #code-talen_list {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  #grafisch,
+  #front-end,
+  #code-talen {
+    height: 6rem;
+  }
+}
+@media screen and (min-width: 474px) and (max-width: 1020px) {
+  #grafisch_list,
+  #front-end_list,
+  #code-talen_list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 1243px) {
+  #competenties_container {
+    width: 80%;
+  }
+}
+
+/*=============== projecten ===============*/
+#projecten {
+  padding: 7rem 0rem;
+}
+#projecten_intro {
+  margin: auto;
+  margin-bottom: 6rem;
+  text-align: center;
+  max-width: 100rem;
+  overflow-x: hidden;
+}
+
+#projecten_intro_wrapper {
+  transform: translateX(-100vw);
+  opacity: 0;
+  transition: 2s;
+}
+#projecten_intro p {
+  width: 60%;
+  margin: auto;
+}
+
+#projecten_intro h1 {
+  font-size: var(--h1-font-size);
+  margin-bottom: 1.5rem;
+}
+
+#calculator,
+#password_generator,
+#notifications_pagina,
+#hotel_jacana,
+#jammming {
+  margin: auto;
+  margin-bottom: 4rem;
+  overflow-x: hidden;
+  padding-bottom: 4rem;
+}
+
+#calculator_wrapper,
+#password_generator_wrapper,
+#notifications_pagina_wrapper,
+#hotel_jacana_wrapper,
+#jammming_wrapper {
+  margin: auto;
+  display: flex;
+  width: 90%;
+  max-width: 100rem;
+  justify-content: center;
+  transform: translateX(100vw);
+  transition: 2s;
+}
+
+#password_generator_wrapper,
+#hotel_jacana_wrapper {
+  transform: translateX(-100vw);
+}
+
+#jammming {
+  margin-bottom: 0rem;
+}
+
+.project_text {
+  width: clamp(366px, 478px, 620px);
+}
+
+.title-box {
+  width: 70%;
+  border-bottom: 2px solid var(--third-color);
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+  line-height: 2rem;
+}
+
+video {
+  width: 520;
+  height: 340;
+}
+
+.password_generator-title {
+  width: 78%;
+}
+
+.project p {
+  margin: 1.5rem 0rem 2.5rem 2rem;
+}
+
+.project h2 {
+  font-size: var(--h2-font-size);
+  padding: 1rem;
+  border-bottom: 6px solid var(--fifth-color);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  transform: translateY(4px);
+}
+
+.project h3 {
+  font-size: 0.8rem;
+  margin-left: 2rem;
+  margin-bottom: 0rem;
+  line-height: 2rem;
+}
+
+.project h3 span {
+  color: var(--fifth-color);
+}
+
+.icon-info {
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-end;
+}
+
+.code-talen p {
+  font-size: var(--small-font-size);
+  margin-top: 0.5rem;
+  margin-bottom: 0px;
+}
+.code-talen {
+  display: flex;
+  align-items: center;
+}
+
+.icon-info i {
+  font-size: 1.8rem;
+  margin-left: 1rem;
+}
+
+.icon-info i:hover {
+  color: var(--fifth-color);
+}
+
+.icon-links {
+  display: flex;
+  align-items: flex-end;
+  margin-right: 2rem;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+}
+
+.github-page_link:hover .tooltip,
+.github_link:hover .tooltip {
+  position: absolute;
+  display: block;
+  font-size: 0.7rem;
+  color: var(--first-color);
+  background-color: var(--third-color);
+  padding: 0.7rem;
+  border-radius: 5px;
+  transform: translateX(-10px);
+  margin-top: 15px;
+}
+
+.github-page_link:hover .tooltip::before,
+.github_link:hover .tooltip::before {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid var(--third-color);
+  margin-left: 18px;
+  transform: translateY(-20px);
+}
+
+#github_account_link {
+  height: 100px;
+  opacity: 0;
+  width: 100vw;
+  padding: 0rem 2rem;
+  overflow: hidden;
+}
+
+#github_account_link a {
+  color: var(--fifth-color);
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  line-height: 2rem;
+  transition: 2s;
+  transform: translateX(-100vw);
+}
+#github_account_link a i {
+  font-size: 1.5rem;
+  transform: translateY(0.3rem);
+  transition: 0.5s;
+}
+#github_account_link a:hover i {
+  transform: translate(1.5rem, 0.3rem);
+}
+
+@media screen and (max-width: 640px) {
+  video {
+    width: 80%;
+    height: 50%;
+  }
+  .project_text {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 993px) {
+  #calculator_wrapper,
+  #password_generator_wrapper,
+  #notifications_pagina_wrapper,
+  #hotel_jacana_wrapper,
+  #jammming_wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .title-box {
+    border-left: 2px solid var(--third-color);
+    padding-top: 2rem;
+  }
+}
+
+/*=============== contact ===============*/
+
+#contact {
+  width: 100%;
+  padding: 7rem 0rem 16rem 0rem;
+}
+
+#contact_wrapper {
+  transform: translateX(-100vh);
+  opacity: 0;
+  transition: 2s;
+}
+
+#contact_intro {
+  margin: auto;
+  text-align: center;
+}
+
+#contact_intro p {
+  width: 50%;
+  margin: 1.5rem auto 5rem auto;
+}
+
+#contact_container {
+  display: flex;
+  width: 80%;
+  max-width: 100rem;
+  margin: auto;
+}
+
+#contact_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  border-right: 2px solid var(--third-color);
+  padding: 2rem 0rem;
+}
+
+#contact_info i {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+#contact_info a {
+  color: var(--fifth-color);
+  margin-top: 0.5rem;
+  justify-self: flex-start;
+}
+
+#contact_info a i {
+  font-size: 1.5rem;
+  transform: translateY(5px);
+  transition: 0.5s;
+}
+#contact_info a:hover i {
+  transform: translate(15px, 5px);
+}
+
+.contact_info_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact_info_box:first-of-type {
+  margin-bottom: 3rem;
+}
+
+#contact_form {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact_form form {
+  width: 80%;
+}
+
+#contact_form label {
+  background-color: var(--first-color);
+  padding: 0.8rem;
+  margin: -5px 0rem 0px 10px;
+  position: absolute;
+  font-size: 1rem;
+}
+
+#contact_form input[type='text'],
+#contact_form input[type='email'] {
+  height: 4rem;
+  margin-bottom: 2rem;
+}
+
+#contact_form input[type='text'],
+#contact_form input[type='email'],
+#contact_form textarea {
+  padding: 1rem 1rem 1rem 1.5rem;
+  width: 100%;
+  background-color: var(--first-color);
+  border: 2px solid var(--fourth-color);
+  border-radius: 5px;
+  color: var(--fourth-color);
+  font-size: var(--small-font-size);
+  font-family: 'Trispace', sans-serif;
+  font-weight: var(--medium);
+}
+
+#contact_form input[type='text']:focus,
+#contact_form input[type='text']:active,
+#contact_form input[type='email']:focus,
+#contact_form input[type='email']:active,
+#contact_form textarea:focus,
+#contact_form textarea:focus {
+  outline: none;
+  border: 2px solid var(--fifth-color);
+}
+
+#contact_form textarea {
+  line-height: 2rem;
+}
+
+#contact_form button {
+  margin-top: 1.5rem;
+  font-size: var(--normal-font-size);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  -webkit-transition: background-color 600000s 0s, color 600000s 0s;
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input::-webkit-contacts-auto-fill-button {
+  background-color: var(--first-color);
+}
+
+@media screen and (max-width: 960px) {
+  .contact_info_box {
+    text-align: center;
+  }
+  .contact_info_box:first-of-type {
+    margin-bottom: 0rem;
+    margin-right: 2rem;
+  }
+  #contact_container {
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+  }
+  #contact_info {
+    border-right: none;
+    flex-direction: row;
+    width: 80%;
+  }
+  #contact_form {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 633px) {
+  #contact_info {
+    flex-direction: column;
+  }
+  .contact_info_box:first-of-type {
+    margin-right: 0rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #contact_form form {
+    width: 100%;
+  }
+}
+
+/*=============== footer ===============*/
+footer {
+  padding: 2rem;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+/*=============== verzonden ===============*/
+#verzonden {
+  padding-top: 0px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#verzonden h1 {
+  margin-bottom: 0.8rem;
+}
+
+#verzonden p {
+  margin-bottom: 3rem;
+}
+
+#verzonden .button {
+  width: 15rem;
+  margin: 0rem auto;
+}
